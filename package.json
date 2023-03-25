@@ -4,7 +4,8 @@
   "description": "Back-end project setup using express and prisma to connect to postgres database",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
