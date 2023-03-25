@@ -1,0 +1,23 @@
+{
+  "name": "prisma-base-framework",
+  "version": "1.0.0",
+  "description": "Back-end project setup using express and prisma to connect to postgres database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabhsingh06/node-prisma-base-framework.git"
+  },
+  "author": "Saurabh Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saurabhsingh06/node-prisma-base-framework/issues"
+  },
+  "homepage": "https://github.com/saurabhsingh06/node-prisma-base-framework#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
