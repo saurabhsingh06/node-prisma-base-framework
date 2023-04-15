@@ -1,6 +1,7 @@
 const express = require("express");
 const authRoutes = require("./routes/authRoutes");
 const globalErrorHandlingMiddleware = require("./controllers/errorController");
+const AppError = require("./utilities/appError");
 const app = express();
 
 // Body Parser

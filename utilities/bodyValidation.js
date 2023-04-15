@@ -1,5 +1,6 @@
 const Ajv = require("ajv");
 const ajv = new Ajv()
+    .addFormat("email", /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i)
     .addFormat("password", /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/);
 
 const AppError = require("./appError");
@@ -24,9 +25,18 @@ exports.validateBody = (body, schema) => {
     } else if(err.keyword == 'type') {
         throw new AppError(`${convertInstancePath(err)} ${err.message}`, statusCode);
 
+    } else if(err.keyword == 'required') {
+        throw new AppError(`Body ${err.message}`, statusCode);
+
     } else if(err.keyword == 'format') {
         if(err.params.format == 'password') {
-            throw new AppError("Password must include minimum 8 letter, with at least a symbol, upper and lower case letters and a number");
+            throw new AppError("Password must include minimum 8 letter, with at least a symbol, upper and lower case letters and a number", statusCode);
+
+        } else if(err.params.format == 'email') {
+            throw new AppError(`Please provide valid email address`, statusCode);
         }
+    } else {
+        throw new AppError(err.message);
     }
+
 };
