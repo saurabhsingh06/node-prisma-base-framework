@@ -4,6 +4,8 @@ const globalErrorHandlingMiddleware = require("./controllers/errorController");
 const AppError = require("./utilities/appError");
 const app = express();
 
+app.use(express.static('public'))
+
 // Body Parser
 app.use(express.json());
 

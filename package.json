@@ -4,9 +4,9 @@
   "description": "Back-end project setup using express and prisma to connect to postgres database",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "build": "node index.js"
+    "start": "node ./index.js",
+    "dev": "nodemon ./index.js",
+    "build": "node ./index.js"
   },
   "repository": {
     "type": "git",
